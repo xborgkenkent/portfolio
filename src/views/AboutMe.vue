@@ -1,7 +1,26 @@
 <script setup lang="ts">
-import Header from "../components/Header.vue"
 import Tech from "../components/Tech.vue"
 import RecentProject from "../components/RecentProject.vue"
+
+interface Tech {
+    name: string
+    icon: string
+}
+
+const techs: Tech[] = [
+{ name: 'Scala', icon: 'scala.svg' },
+{ name: 'Typescript', icon: 'typescript.svg' },
+{ name: 'Nuxt', icon: 'nuxt.svg' },
+{ name: 'Laravel', icon: 'laravel.svg' },
+{ name: 'AWS', icon: 'aws.svg' },
+{ name: 'PostgreSQL', icon: 'postgresql.svg' },
+{ name: 'Git', icon: 'git.svg' },
+{ name: 'Docker', icon: 'docker.svg' },
+{ name: 'OpenAI', icon: 'openai.svg' },
+  { name: 'Vue.js', icon: 'vuejs.svg' },
+  { name: 'Tailwind', icon: 'tailwind.svg' },
+  { name: 'CSS3', icon: 'css3.svg' },
+  ]
 </script>
 
 <template>
@@ -17,10 +36,6 @@ import RecentProject from "../components/RecentProject.vue"
                     <p class="font-sans font-bold text-2xl text-[#FAFAFA] tracking-wider">Hey, I'm Kent</p>
                     <p class="text-2xl hover:animate-wave">👋</p>
                 </div>
-                <!-- <div class="flex items-center gap-2">
-                    <p class="text-xs">🟢</p>
-                    <p class="font-sans font-thin text-base text-[#666161] tracking-wide">Available for work</p>
-                </div> -->
                 <div class="flex items-center gap-2">
                     <p class="text-xs">📍</p>
                     <p class="font-sans font-thin text-base text-[#666161] tracking-wide">Cebu City, Philippines</p>
@@ -28,16 +43,11 @@ import RecentProject from "../components/RecentProject.vue"
             </div>
         </div>
         <p class="font-sans font-thin text-base pt-8 tracking-wide">I’m an experienced full-stack developer with a specialization in back-end development, complemented  by extensive  expertise in system automation and seamless integrations.</p>
-        <div class="grid grid-cols-4 pt-8 gap-3">
-            <Tech/>
-            <Tech/>
-            <Tech/>
-            <Tech/> 
-            <Tech/>
-            <Tech/>
-            <Tech/>
-            <Tech/>
+        <div class="grid grid-cols-4 gap-3 pt-8">
+        <div v-for="(tech, index) in techs" :key="index">
+            <Tech :name="tech.name" :icon-name="tech.icon" />
         </div>
+    </div>
         <div class="flex flex-col gap-2 pt-20">
             <p class="font-sans font-thin text-md text-[#666161] tracking-wide">Recent Projects</p>
             <div class="flex gap-3 justify-between">
