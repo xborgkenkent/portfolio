@@ -8,7 +8,7 @@ export interface Tech {
 }
 
 const techs: Tech[] = [
-    { name: 'Scala', icon: 'scala.svg' },
+    { name: 'Scala', icon: '../../public/scala.svg' },
     { name: 'Typescript', icon: 'typescript.svg' },
     { name: 'Nuxt', icon: 'nuxt.svg' },
     { name: 'Laravel', icon: 'laravel.svg' },
