@@ -62,7 +62,7 @@ const projects: Project[] = [
             </div>
         </div>
         <div class="flex flex-col gap-2 pt-20">
-            <p class="font-sans font-thin text-md text-[#666161] tracking-wide">Recent Projects</p>
+            <p class="font-sans font-thin text-md text-[#c] tracking-wide">Recent Projects</p>
             <div class="grid grid-cols-2 gap-3">
                 <div v-for="(project, index) in projects" :key="index">
                     <RecentProject :title="project.title" :description="project.description" :link="project.link" :image="project.image"/>
@@ -72,6 +72,14 @@ const projects: Project[] = [
                 <p class="font-sans font-bold text-md text-[#FAFAFA] tracking-wide">More projects</p>
                 <img src="../../public/right-arrow.svg" class="size-4">
             </div>
+        </div>
+        <div class="flex flex-col items-center justify-center pt-24 gap-2">
+            <p class="font-sans font-bold text-6xl text-[#FAFAFA] tracking-wider">LET'S TALK</p>
+            <p class="font-sans font-thin text-md text-[#666161] tracking-wider">kentregiel.buncal139@gmail.com</p>
+        </div>
+
+        <div class="flex flex-col items-center justify-center pt-24 gap-2">
+            <p class="font-sans font-bold text-6xl text-[#FAFAFA] tracking-wider">in progress...</p>
         </div>
     </div>
 </template>
