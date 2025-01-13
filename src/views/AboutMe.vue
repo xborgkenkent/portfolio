@@ -30,9 +30,8 @@ export interface Project {
 }
 
 const projects: Project[] = [
-    { title: 'Tik-Tik Toe', description: 'A tic tac toe with a twist' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'tiktiktoe.png'},
+    { title: 'Tik-Tik Toe', description: 'A tic tac toe with a twist' , link: 'https://tik-tik-toe-ten.vercel.app/', image: 'tiktiktoe.png'},
     { title: 'Kent\'s portfolio', description: 'A simple portfolio' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'portfolio.png'},
-    { title: 'Tik-Tik Toe', description: 'A tic tac toe with a twist' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'tiktiktoe.png'},
     ]
 
 </script>
