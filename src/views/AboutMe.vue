@@ -8,7 +8,7 @@ export interface Tech {
 }
 
 const techs: Tech[] = [
-    { name: 'Scala', icon: '../../public/scala.svg' },
+    { name: 'Scala', icon: '/assets/scala.svg' },
     { name: 'Typescript', icon: 'typescript.svg' },
     { name: 'Nuxt', icon: 'nuxt.svg' },
     { name: 'Laravel', icon: 'laravel.svg' },
@@ -30,7 +30,7 @@ export interface Project {
 }
 
 const projects: Project[] = [
-    { title: 'Tik-Tik Toe', description: 'A tic tac toe with a twist' , link: 'https://tik-tik-toe-ten.vercel.app/', image: 'tiktiktoe.png'},
+    { title: 'Tik-Tik Toe', description: 'A tic tac toe with a twist' , link: 'https://tik-tik-toe-ten.vercel.app/', image: '../../public/tiktiktoe.png'},
     { title: 'Kent\'s portfolio', description: 'A simple portfolio' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'portfolio.png'},
     ]
 
