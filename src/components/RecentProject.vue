@@ -1,11 +1,18 @@
 <script setup lang="ts">
 
+const props = defineProps({
+  title: String,
+  description: String,
+  link: String,
+  image: String
+});
+
 </script>
 
 <template>
-    <div class="flex flex-col border border-[#575757] p-4 rounded-md">
-        <img src="../../public/tiktiktoe.png" class="w-fit">
-        <p class="font-sans font-bold text-lg text-[#FAFAFA] tracking-wide">Title here</p>
-        <p class="font-sans font-thin text-base text-[#666161] tracking-wide">Description here</p>
+    <div class="w-fit flex flex-col border border-[#575757] p-4 rounded-md hover:bg-[#262626]">
+        <img :src="`../../public/${image}`" class="w-fit">
+        <p class="font-sans font-bold text-lg text-[#FAFAFA] tracking-wide">{{ title }}</p>
+        <p class="font-sans font-thin text-base text-[#666161] tracking-wide">{{ description }}</p>
     </div>
 </template>

@@ -2,25 +2,39 @@
 import Tech from "../components/Tech.vue"
 import RecentProject from "../components/RecentProject.vue"
 
-interface Tech {
+export interface Tech {
     name: string
     icon: string
 }
 
 const techs: Tech[] = [
-{ name: 'Scala', icon: 'scala.svg' },
-{ name: 'Typescript', icon: 'typescript.svg' },
-{ name: 'Nuxt', icon: 'nuxt.svg' },
-{ name: 'Laravel', icon: 'laravel.svg' },
-{ name: 'AWS', icon: 'aws.svg' },
-{ name: 'PostgreSQL', icon: 'postgresql.svg' },
-{ name: 'Git', icon: 'git.svg' },
-{ name: 'Docker', icon: 'docker.svg' },
-{ name: 'OpenAI', icon: 'openai.svg' },
-  { name: 'Vue.js', icon: 'vuejs.svg' },
-  { name: 'Tailwind', icon: 'tailwind.svg' },
-  { name: 'CSS3', icon: 'css3.svg' },
+    { name: 'Scala', icon: 'scala.svg' },
+    { name: 'Typescript', icon: 'typescript.svg' },
+    { name: 'Nuxt', icon: 'nuxt.svg' },
+    { name: 'Laravel', icon: 'laravel.svg' },
+    { name: 'AWS', icon: 'aws.svg' },
+    { name: 'PostgreSQL', icon: 'postgresql.svg' },
+    { name: 'Git', icon: 'git.svg' },
+    { name: 'Docker', icon: 'docker.svg' },
+    { name: 'OpenAI', icon: 'openai.svg' },
+    { name: 'Vue.js', icon: 'vuejs.svg' },
+    { name: 'Tailwind', icon: 'tailwind.svg' },
+    { name: 'CSS3', icon: 'css3.svg' },
   ]
+
+export interface Project {
+    title: string
+    description: string
+    link: string
+    image: string
+}
+
+const projects: Project[] = [
+    { title: 'Tik-Tik Toe', description: 'A tic tac toe with a twist' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'tiktiktoe.png'},
+    { title: 'Kent\'s portfolio', description: 'A simple portfolio' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'portfolio.png'},
+    { title: 'Tik-Tik Toe', description: 'A tic tac toe with a twist' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'tiktiktoe.png'},
+    ]
+
 </script>
 
 <template>
@@ -44,15 +58,16 @@ const techs: Tech[] = [
         </div>
         <p class="font-sans font-thin text-base pt-8 tracking-wide">I’m an experienced full-stack developer with a specialization in back-end development, complemented  by extensive  expertise in system automation and seamless integrations.</p>
         <div class="grid grid-cols-4 gap-3 pt-8">
-        <div v-for="(tech, index) in techs" :key="index">
-            <Tech :name="tech.name" :icon-name="tech.icon" />
+            <div v-for="(tech, index) in techs" :key="index">
+                <Tech :name="tech.name" :icon-name="tech.icon" />
+            </div>
         </div>
-    </div>
         <div class="flex flex-col gap-2 pt-20">
             <p class="font-sans font-thin text-md text-[#666161] tracking-wide">Recent Projects</p>
-            <div class="flex gap-3 justify-between">
-                <RecentProject/>
-                <RecentProject/>
+            <div class="grid grid-cols-2 gap-3">
+                <div v-for="(project, index) in projects" :key="index">
+                    <RecentProject :title="project.title" :description="project.description" :link="project.link" :image="project.image"/>
+                </div>
             </div>
             <div class="flex items-center gap-2">
                 <p class="font-sans font-bold text-md text-[#FAFAFA] tracking-wide">More projects</p>
