@@ -9,7 +9,7 @@ const props = defineProps({
 const isHovered = ref(false)
 
 const iconSrc = computed(() =>
-  isHovered.value ? `../../public/hover-${props.iconName}` : `../../public/${props.iconName}`
+  isHovered.value ? `/hover-${props.iconName}` : `/${props.iconName}`
 );
 </script>
 
