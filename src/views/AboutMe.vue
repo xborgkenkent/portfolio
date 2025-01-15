@@ -32,6 +32,7 @@ export interface Project {
 const projects: Project[] = [
     { title: 'Tik-Tik Toe', description: 'A tic tac toe with a twist' , link: 'https://tik-tik-toe-ten.vercel.app/', image: 'tiktiktoe.png'},
     { title: 'Kent\'s portfolio', description: 'A simple portfolio' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'portfolio.png'},
+    { title: 'Trading Viewer', description: 'User interface for trading data batch processing' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'trading.png'},
     ]
 
 </script>
@@ -75,6 +76,10 @@ const projects: Project[] = [
         </div>
         <div class="flex flex-col items-center justify-center pt-24 gap-2">
             <p class="font-sans font-bold text-6xl text-[#FAFAFA] tracking-wider">LET'S TALK</p>
+            <div class="flex gap-2">
+                <img src="../../public/linkedin.svg" class="size-8">
+                <img src="../../public/github.svg" class="size-8">
+            </div>
             <p class="font-sans font-thin text-md text-[#666161] tracking-wider">kentregiel.buncal139@gmail.com</p>
         </div>
 
