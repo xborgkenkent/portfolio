@@ -14,9 +14,8 @@ const iconSrc = computed(() =>
 </script>
 
 <template>
-  <!-- <img :src="iconSrc"/> -->
   <div
-    class="flex flex-col justify-center gap-2 pt-2 items-center border-[#575757] border rounded-md hover:bg-[#262626]"
+    class="flex flex-col justify-center gap-2 py-2 pt-2 items-center border-[#575757] border rounded-md hover:bg-[#262626]"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
   >
