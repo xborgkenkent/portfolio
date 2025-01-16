@@ -30,9 +30,9 @@ export interface Project {
 }
 
 const projects: Project[] = [
+    { title: 'Finance Anomaly Detection', description: 'Live Dashboard of Anomaly Detection' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'anomaly-detection.png'},
     { title: 'Tik-Tik Toe', description: 'A tic tac toe with a twist' , link: 'https://tik-tik-toe-ten.vercel.app/', image: 'tiktiktoe.png'},
-    { title: 'Kent\'s portfolio', description: 'A simple portfolio' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'portfolio.png'},
-    { title: 'Trading Viewer', description: 'User interface for trading data batch processing' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'trading.png'},
+    { title: 'Kent\'s portfolio', description: 'A simple portfolio' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'portfolio.png'}
     ]
 
 </script>
@@ -56,24 +56,25 @@ const projects: Project[] = [
                 </div>
             </div>
         </div>
-        <p class="font-sans font-thin text-base pt-8 tracking-wide">I’m an experienced full-stack developer with a specialization in back-end development, complemented  by extensive  expertise in system automation and seamless integrations.</p>
+        <p class="font-sans font-thin text-base pt-8 tracking-wide">I’m an experienced full-stack developer specializing in back-end development and big data engineering, with extensive expertise in system automation and integrations.</p>
         <div class="grid grid-cols-4 gap-3 pt-8">
             <div v-for="(tech, index) in techs" :key="index">
                 <Tech :name="tech.name" :icon-name="tech.icon" />
             </div>
         </div>
         <div class="flex flex-col gap-2 pt-20">
-            <p class="font-sans font-thin text-md text-[#c] tracking-wide">Recent Projects</p>
-            <div class="grid grid-cols-2 gap-3">
-                <div v-for="(project, index) in projects" :key="index">
-                    <RecentProject :title="project.title" :description="project.description" :link="project.link" :image="project.image"/>
-                </div>
+            <p class="font-sans font-thin text-md text-[#575757] tracking-wide">Recent Projects</p>
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-4">
+              <div v-for="(project, index) in projects" :key="index" class="mb-4 break-inside-avoid">
+                <RecentProject :title="project.title" :description="project.description" :link="project.link" :image="project.image" />
+              </div>
             </div>
-            <div class="flex items-center gap-2">
-                <p class="font-sans font-bold text-md text-[#FAFAFA] tracking-wide">More projects</p>
-                <img src="../../public/right-arrow.svg" class="size-4">
+            <div class="flex items-center gap-2 pt-6">
+              <p class="font-sans font-bold text-md text-[#FAFAFA] tracking-wide">More projects</p>
+              <img src="../../public/right-arrow.svg" class="size-4">
             </div>
-        </div>
+          </div>
+          
         <div class="flex flex-col items-center justify-center pt-24 gap-2">
             <p class="font-sans font-bold text-6xl text-[#FAFAFA] tracking-wider">LET'S TALK</p>
             <div class="flex gap-2">
