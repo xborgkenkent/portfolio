@@ -75,13 +75,13 @@ const projects: Project[] = [
             </div>
           </div>
           
-        <div class="flex flex-col items-center justify-center pt-24 gap-2">
+        <div class="flex flex-col items-center justify-center pt-24 gap-5">
             <p class="font-sans font-bold text-6xl text-[#FAFAFA] tracking-wider">LET'S TALK</p>
             <div class="flex gap-2">
                 <img src="../../public/linkedin.svg" class="size-8">
                 <img src="../../public/github.svg" class="size-8">
             </div>
-            <p class="font-sans font-thin text-md text-[#666161] tracking-wider">kentregiel.buncal139@gmail.com</p>
+            <p class="font-sans font-thin text-md text-[#FAFAFA] tracking-wider">kentregiel.buncal139@gmail.com</p>
         </div>
 
         <div class="flex flex-col items-center justify-center pt-24 gap-2">
