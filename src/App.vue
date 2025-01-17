@@ -9,7 +9,8 @@ import AboutMe from "./views/AboutMe.vue"
     <!-- <div class="w-4/12 pt-10">
         <Header class="pb-16"/>
         <AboutMe/>
-    </div>   -->
+    </div>
+     <p class="fixed bottom-0 right-10 animate-bounce text-3xl">🏀</p>
   </div>
 </template>
 
