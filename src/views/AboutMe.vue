@@ -56,37 +56,45 @@ const closeModal = () => {
 
 <template>
     <div class="flex flex-col text-[#FAFAFA]">
-        <Modal v-if="modalTrigger" ref="modalTrigger">
-            <button @click="closeModal" class="px-4 py-2">
-                ❌
-            </button>
-            <div class="flex flex-row gap-4 px-4 pb-4 text-center">
-                <template v-if="selectedProject">
-                    <div class="flex flex-col items-start gap-5 w-full">
-                        <img :src="`../../public/${selectedProject.image}`" :alt="selectedProject.title" class="w-82 rounded-lg">
-                        <h2 class="text-xl font-bold">{{ selectedProject.title }}</h2>
-                        <p>{{ selectedProject.description }}</p>
-                        <div class="flex justify-between items-center w-full">
-                            <div class="flex items-center">
-                                <a v-show="selectedProject.hasSource" :href="selectedProject.link" target="_blank" class="rounded-full text-sm font-bold text-white">
-                                    <div class="flex gap-2 items-center">
-                                        <img src="../../public/github.svg" :alt="selectedProject.title" class="w-8 rounded-lg">
-                                        <p>Github Link</p>
-                                    </div>
-                                </a>    
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div v-for="(tech, index) in selectedProject.tech" :key="index">
-                                    <div class="flex bg-[#666161] p-2 rounded-lg hover:bg-[#575757]">
-                                        <p>{{ tech }}</p>
+        <Transition 
+          enter-active-class="transition-all ease-in duration-200"
+          leave-active-class="transition-all ease-out duration-200"
+          enter-from-class="opacity-0"
+          leave-to-class="opacity-0"
+          mode="out-in"
+        >
+            <Modal v-if="modalTrigger" ref="modalTrigger">
+                <button @click="closeModal" class="px-4 py-2">
+                    ❌
+                </button>
+                <div class="flex flex-row gap-4 px-4 pb-4 text-center">
+                    <template v-if="selectedProject">
+                        <div class="flex flex-col items-start gap-5 w-full">
+                            <img :src="`../../public/${selectedProject.image}`" :alt="selectedProject.title" class="w-82 rounded-lg">
+                            <h2 class="text-xl font-bold">{{ selectedProject.title }}</h2>
+                            <p>{{ selectedProject.description }}</p>
+                            <div class="flex justify-between items-center w-full">
+                                <div class="flex items-center">
+                                    <a v-show="selectedProject.hasSource" :href="selectedProject.link" target="_blank" class="rounded-full text-sm font-bold text-white">
+                                        <div class="flex gap-2 items-center">
+                                            <img src="../../public/github.svg" :alt="selectedProject.title" class="w-8 rounded-lg">
+                                            <p>Github Link</p>
+                                        </div>
+                                    </a>    
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div v-for="(tech, index) in selectedProject.tech" :key="index">
+                                        <div class="flex bg-[#666161] p-2 rounded-lg hover:bg-[#575757]">
+                                            <p>{{ tech }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </template>
-            </div>
-        </Modal>
+                    </template>
+                </div>
+            </Modal>
+        </Transition>
         <img src="../../public/cover1.png" class="size-full transition-transform duration-300 ease-out hover:scale-105">
         <div class="pt-2 flex">
             <div class="relative">
