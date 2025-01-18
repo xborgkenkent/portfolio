@@ -34,7 +34,7 @@ export interface Project {
 }
 
 const projects: Project[] = [
-    { title: 'Finance Anomaly Detection', description: 'Live Dashboard of Anomaly Detection' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'anomaly-detection.png', tech: ['Scala', 'Apache Spark', 'Postgresql', 'JFrame'], hasSource: false},
+    // { title: 'Finance Anomaly Detection', description: 'Live Dashboard of Anomaly Detection' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'anomaly-detection.png', tech: ['Scala', 'Apache Spark', 'Postgresql', 'JFrame'], hasSource: false},
     { title: 'Tik-Tik Toe', description: 'A tic tac toe with a twist' , link: 'https://tik-tik-toe-ten.vercel.app/', image: 'tiktiktoe.png', tech: ['Vue.js', 'Typescript', 'Tailwind CSS'], hasSource: true},
     { title: 'Kent\'s portfolio', description: 'A simple portfolio' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'portfolio.png', tech:['Vue.js', 'Typescript', 'Tailwind CSS'], hasSource: true}
     ]
@@ -52,6 +52,16 @@ const closeModal = () => {
     selectedProject.value = null
 }
 
+const hoverProfile = ref(false)
+const hoveredSection = ref<string | null>(null)
+
+const highlightSection = (section: string) => {
+  hoveredSection.value = section
+}
+
+const resetHighlight = () => {
+  hoveredSection.value = null
+}
 </script>
 
 <template>
@@ -70,14 +80,23 @@ const closeModal = () => {
                 <div class="flex flex-row gap-4 px-4 pb-4 text-center">
                     <template v-if="selectedProject">
                         <div class="flex flex-col items-start gap-5 w-full">
-                            <img :src="`../../public/${selectedProject.image}`" :alt="selectedProject.title" class="w-82 rounded-lg">
+                            <img 
+                              :src="`../../public/${selectedProject.image}`" 
+                              :alt="selectedProject.title" 
+                              class="w-82 rounded-lg">
                             <h2 class="text-xl font-bold">{{ selectedProject.title }}</h2>
                             <p>{{ selectedProject.description }}</p>
                             <div class="flex justify-between items-center w-full">
                                 <div class="flex items-center">
-                                    <a v-show="selectedProject.hasSource" :href="selectedProject.link" target="_blank" class="rounded-full text-sm font-bold text-white">
+                                    <a 
+                                      v-show="selectedProject.hasSource" 
+                                      :href="selectedProject.link" target="_blank" 
+                                      class="rounded-full text-sm font-bold text-white">
                                         <div class="flex gap-2 items-center">
-                                            <img src="../../public/github.svg" :alt="selectedProject.title" class="w-8 rounded-lg">
+                                            <img 
+                                              src="../../public/github.svg" 
+                                              :alt="selectedProject.title" 
+                                              class="w-8 rounded-lg">
                                             <p>Github Link</p>
                                         </div>
                                     </a>    
@@ -99,7 +118,11 @@ const closeModal = () => {
         <div class="pt-2 flex">
             <div class="relative">
                 <img src="../../public/profile.jpg" class="size-24 rounded-full border-4 border-[#575757]">
-                <div class="absolute inset-0 rounded-full border-4 border-transparent hover:border-t-[#4CAF50] hover:border-l-[#4CAF50] hover:border-r-[#4CAF50]  transition-all duration-1000 ease-in-out hover:rotate-[420deg]"></div>
+                <div 
+                  @mouseover="hoverProfile = true" 
+                  @mouseleave="hoverProfile = false"  
+                  class="absolute inset-0 rounded-full border-4 border-transparent hover:border-t-[#4CAF50] hover:border-l-[#4CAF50] hover:border-r-[#4CAF50]  transition-all duration-1000 ease-in-out hover:rotate-[420deg]">
+                </div>
             </div>
             <div class="flex flex-col pl-6 pt-2 gap-2">
                 <div class="flex justify-center items-center">
@@ -112,7 +135,45 @@ const closeModal = () => {
                 </div>
             </div>
         </div>
-        <p class="font-sans font-thin text-base pt-8 tracking-wide">I’m an experienced full-stack developer specializing in back-end development and big data engineering, with extensive expertise in system automation and integrations.</p>
+        <p 
+          class="font-sans font-thin text-base pt-8 tracking-wide" 
+          :class="[ 
+              hoverProfile ? 'text-[#666161] font-normal' : 'text-[#FAFAFA]' 
+            ]">
+            I'm an experienced 
+          <span 
+            class="transition-all duration-100"
+            :class="[
+              hoverProfile ? 'transition-transform duration-1000 ease-linear bg-orange-400 text-[#FAFAFA] p-1 font-normal' : 'text-[#FAFAFA]'
+            ]"
+          >
+            full-stack developer
+          </span>specializing in
+          <span 
+            class="transition-all duration-100"
+            :class="[
+              hoverProfile  ? 'transition-transform duration-1000 ease-linear bg-orange-400 text-[#FAFAFA] p-1 font-normal' : 'text-[#FAFAFA]'
+            ]"
+          >
+          back-end development
+          </span> , with extensive expertise in 
+          <span 
+            class="transition-all duration-100"
+            :class="[
+              hoverProfile  ? 'transition-transform duration-1000 ease-linear bg-orange-400 text-[#FAFAFA] p-1 font-normal' : 'text-[#FAFAFA]'
+            ]"
+          >
+            system automation
+          </span> and 
+          <span 
+            class="transition-all duration-100"
+            :class="[
+              hoverProfile ? 'transition-transform duration-1000 ease-linear bg-orange-400 text-[#FAFAFA] p-1 font-normal' : 'text-[#FAFAFA]'
+            ]"
+          >
+            integrations
+          </span>.
+        </p>
         <div class="grid grid-cols-4 gap-3 pt-8">
             <div v-for="(tech, index) in techs" :key="index">
                 <Tech :name="tech.name" :icon-name="tech.icon" />
