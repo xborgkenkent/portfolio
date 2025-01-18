@@ -15,7 +15,7 @@ const iconSrc = computed(() =>
 
 <template>
   <div
-    class="flex flex-col justify-center gap-2 py-2 pt-2 items-center border-[#575757] border rounded-md hover:bg-[#262626]"
+    class="flex flex-col justify-center gap-2 py-2 pt-2 items-center border-[#575757] border rounded-md hover:bg-[#262626] text-[#FAFAFA]"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
   >
@@ -25,6 +25,6 @@ const iconSrc = computed(() =>
       class="transition-transform duration-300 ease-out size-8"
       :class="{ '-translate-y-1 scale-100': isHovered }"
     />
-    <p class="font-sans font-thin text-sm tracking-wide text-[#666161]">{{ name }}</p>
+    <p class="font-sans font-thin text-sm tracking-wide">{{ name }}</p>
   </div>
 </template>
