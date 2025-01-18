@@ -20,6 +20,7 @@ export default {
       },
       animation: {
         wave: 'wave 1s infinite',
+        bounce: 'bounce 1s infinite',
       },
       sans: ['Inconsolata', 'sans-serif'], // Replace default sans-serif
       mono: ['Inconsolata', 'monospace'], // Use as mono if needed
