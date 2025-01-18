@@ -5,15 +5,9 @@ import AboutMe from "./views/AboutMe.vue"
 
 <template>
   <div class="min-h-screen flex justify-center bg-[#0a0a0a] pb-36">
-    <p class="font-sans font-bold text-2xl text-[#FAFAFA] tracking-wider">UNDER MAINTENANCE</p>
-    <!-- <div class="w-4/12 pt-10">
-        <Header class="pb-16"/>
-        <AboutMe/>
+    <div class="w-4/12 pt-10">
+      <Header class="pb-16"/>
+      <AboutMe/>
     </div>
-     <p class="fixed bottom-0 right-10 animate-bounce text-3xl">🏀</p>
   </div>
 </template>
-
-<style scoped>
-
-</style>
