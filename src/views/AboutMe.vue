@@ -174,7 +174,7 @@ const resetHighlight = () => {
             integrations
           </span>.
         </p>
-        <div class="grid grid-cols-4 gap-3 pt-8">
+        <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 pt-8">
             <div v-for="(tech, index) in techs" :key="index">
                 <Tech :name="tech.name" :icon-name="tech.icon" />
             </div>
