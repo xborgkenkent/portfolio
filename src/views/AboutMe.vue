@@ -36,7 +36,7 @@ export interface Project {
 const projects: Project[] = [
     // { title: 'Finance Anomaly Detection', description: 'Live Dashboard of Anomaly Detection' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'anomaly-detection.png', tech: ['Scala', 'Apache Spark', 'Postgresql', 'JFrame'], hasSource: false},
     { title: 'Tik-Tik Toe', description: 'A tic tac toe with a twist' , link: 'https://tik-tik-toe-ten.vercel.app/', image: 'tiktiktoe.png', tech: ['Vue.js', 'Typescript', 'Tailwind CSS'], hasSource: true},
-    { title: 'Kent\'s portfolio', description: 'A simple portfolio' , link: 'https://github.com/xborgkenkent/TikTikToe', image: '../../public/portfolio.png', tech:['Vue.js', 'Typescript', 'Tailwind CSS'], hasSource: true}
+    { title: 'Kent\'s portfolio', description: 'A simple portfolio' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'portfolio.png', tech:['Vue.js', 'Typescript', 'Tailwind CSS'], hasSource: true}
     ]
 
     const modalTrigger = ref(false)
@@ -81,7 +81,7 @@ const resetHighlight = () => {
                     <template v-if="selectedProject">
                         <div class="flex flex-col items-start gap-5 w-full">
                             <img 
-                              :src="`../../public/${selectedProject.image}`" 
+                              :src="`/${selectedProject.image}`" 
                               :alt="selectedProject.title" 
                               class="w-82 rounded-lg">
                             <h2 class="text-xl font-bold">{{ selectedProject.title }}</h2>
