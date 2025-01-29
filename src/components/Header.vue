@@ -9,15 +9,12 @@ function toggleMenu() {
 </script>
 
 <template>
-  <div class="flex items-center justify-between text-[#FAFAFA] py-4 px-6">
+  <div class="flex items-center justify-between text-[#FAFAFA] py-4 px-1">
     <!-- Logo -->
     <div>
       <p
-        class="font-sans font-bold text-2xl tracking-wider hidden md:block"
+        class="font-sans font-bold text-2xl tracking-wider"
       >
-        KR
-      </p>
-      <p class="font-sans font-bold text-2xl tracking-wider md:hidden">
         KR
       </p>
     </div>
