@@ -15,7 +15,7 @@ function toggleMenu() {
       <p
         class="font-sans font-bold text-2xl tracking-wider hidden md:block"
       >
-        KENT REGIEL
+        KR
       </p>
       <p class="font-sans font-bold text-2xl tracking-wider md:hidden">
         KR
@@ -23,14 +23,14 @@ function toggleMenu() {
     </div>
 
     <!-- Menu for large screens -->
-    <div class="hidden md:flex space-x-4">
+    <!-- <div class="hidden md:flex space-x-4">
       <p class="font-mono text-base font-thin tracking-wide">about me</p>
       <p class="font-mono text-base font-thin tracking-wide">projects</p>
       <p class="font-mono text-base font-thin tracking-wide">contact</p>
-    </div>
+    </div> -->
 
     <!-- Hamburger menu for small and medium screens -->
-    <div class="md:hidden relative">
+    <!-- <div class="md:hidden relative">
       <button @click="toggleMenu" class="focus:outline-none">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +63,7 @@ function toggleMenu() {
           </li>
         </ul>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
