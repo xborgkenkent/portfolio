@@ -85,7 +85,7 @@ const resetHighlight = () => {
                             <img 
                               :src="`/${selectedProject.image}`" 
                               :alt="selectedProject.title" 
-                              class="w-82 rounded-lg">
+                              class="w-full rounded-lg">
                             <h2 class="text-xl font-bold">{{ selectedProject.title }}</h2>
                             <p>{{ selectedProject.description }}</p>
                             <div class="flex flex-col justify-between w-fit gap-2">
