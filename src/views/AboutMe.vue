@@ -37,7 +37,7 @@ export interface Project {
 const projects: Project[] = [
     // { title: 'Finance Anomaly Detection', description: 'Live Dashboard of Anomaly Detection' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'anomaly-detection.png', tech: ['Scala', 'Apache Spark', 'Postgresql', 'JFrame'], hasSource: false},
     { title: 'Sentiment Analysis Live Dashboard', description: 'This simulation creates a sample Twitter post to check its tone—whether it is positive, negative, or neutral. It is useful for studying how computers understand emotions in text.' , link: '', image: 'sentiment.png', tech:['Laravel', 'Apache Spark', 'Vue.js', 'Node.js', 'Typescript', 'Tailwind CSS'], hasSource: false},
-    { title: 'Tik-Tik Toe', description: 'This is a unique take on Tic-Tac-Toe! Instead of ending when you get three in a row, the game continues, letting you score points for each match you make. Once the match ends, the player with the most points wins!' , link: 'https://tik-tik-toe-ten.vercel.app/', image: 'tiktiktoe.png', tech: ['Vue.js', 'Typescript', 'Tailwind CSS'], hasSource: true},
+    { title: 'Tik-Tik Toe', description: 'This is a unique take on Tic-Tac-Toe! Instead of ending when you get three in a row, the game continues, letting you score points for each match you make. Once the match ends, the player with the most points wins!' , link: 'https://tik-tik-toe-ten.vercel.app/', image: 'tiktiktoe.png', tech: ['Vue.js', 'Typescript', 'Tailwind CSS'], hasSource: false},
     { title: 'Kent\'s portfolio', description: 'A simple portfolio.' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'portfolio.png', tech:['Vue.js', 'Typescript', 'Tailwind CSS'], hasSource: false}
     ]
 
