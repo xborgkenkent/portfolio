@@ -103,7 +103,7 @@ const resetHighlight = () => {
                                         </div>
                                     </a>    
                                 </div>
-                                <div class="grid grid-cols-3 items-center gap-2">
+                                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center gap-2">
                                     <div v-for="(tech, index) in selectedProject.tech" :key="index">
                                         <div class="flex bg-[#666161] p-2 rounded-lg hover:bg-[#575757]">
                                             <p>{{ tech }}</p>
