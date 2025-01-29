@@ -14,6 +14,7 @@ const techs: Tech[] = [
     { name: 'Typescript', icon: 'typescript.svg' },
     { name: 'Nuxt', icon: 'nuxt.svg' },
     { name: 'Laravel', icon: 'laravel.svg' },
+    { name: 'Node.js', icon: 'node.svg' },
     { name: 'AWS', icon: 'aws.svg' },
     { name: 'PostgreSQL', icon: 'postgresql.svg' },
     { name: 'Git', icon: 'git.svg' },
@@ -35,11 +36,12 @@ export interface Project {
 
 const projects: Project[] = [
     // { title: 'Finance Anomaly Detection', description: 'Live Dashboard of Anomaly Detection' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'anomaly-detection.png', tech: ['Scala', 'Apache Spark', 'Postgresql', 'JFrame'], hasSource: false},
+    { title: 'Sentiment Analysis Live Dashboard', description: 'Simulation of twitter post for sentiment analysis' , link: '', image: 'sentiment.png', tech:['Laravel', 'Apache Spark', 'Vue.js', 'Node.js', 'Typescript', 'Tailwind CSS'], hasSource: false},
     { title: 'Tik-Tik Toe', description: 'A tic tac toe with a twist' , link: 'https://tik-tik-toe-ten.vercel.app/', image: 'tiktiktoe.png', tech: ['Vue.js', 'Typescript', 'Tailwind CSS'], hasSource: true},
     { title: 'Kent\'s portfolio', description: 'A simple portfolio' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'portfolio.png', tech:['Vue.js', 'Typescript', 'Tailwind CSS'], hasSource: false}
     ]
 
-    const modalTrigger = ref(false)
+const modalTrigger = ref(false)
 const selectedProject = ref<Project | null>(null)
 
 const openModal = (project: Project) => {
@@ -86,13 +88,13 @@ const resetHighlight = () => {
                               class="w-82 rounded-lg">
                             <h2 class="text-xl font-bold">{{ selectedProject.title }}</h2>
                             <p>{{ selectedProject.description }}</p>
-                            <div class="flex justify-between items-center w-full">
+                            <div class="flex flex-col justify-between w-fit gap-2">
                                 <div class="flex items-center">
                                     <a 
                                       v-show="selectedProject.hasSource" 
                                       :href="selectedProject.link" target="_blank" 
                                       class="rounded-full text-sm font-bold text-white">
-                                        <div class="flex gap-2 items-center">
+                                         <div class="flex gap-2 items-center">
                                             <img 
                                               src="../../public/github.svg" 
                                               :alt="selectedProject.title" 
@@ -101,7 +103,7 @@ const resetHighlight = () => {
                                         </div>
                                     </a>    
                                 </div>
-                                <div class="flex items-center gap-2">
+                                <div class="grid grid-cols-3 items-center gap-2">
                                     <div v-for="(tech, index) in selectedProject.tech" :key="index">
                                         <div class="flex bg-[#666161] p-2 rounded-lg hover:bg-[#575757]">
                                             <p>{{ tech }}</p>
@@ -174,7 +176,7 @@ const resetHighlight = () => {
             integrations
           </span>.
         </p>
-        <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 pt-8">
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 pt-8">
             <div v-for="(tech, index) in techs" :key="index">
                 <Tech :name="tech.name" :icon-name="tech.icon" />
             </div>
@@ -193,10 +195,10 @@ const resetHighlight = () => {
             </div>
         </div>
 
-            <div class="flex items-center gap-2 pt-6">
+            <!-- <div class="flex items-center gap-2 pt-6">
               <p class="font-sans font-bold text-md text-[#FAFAFA] tracking-wide">More projects</p>
               <img src="../../public/right-arrow.svg" class="size-4">
-            </div>
+            </div> -->
           </div>
           
         <div class="flex flex-col items-center justify-center pt-24 gap-5">
