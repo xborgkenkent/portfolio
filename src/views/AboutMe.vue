@@ -43,6 +43,11 @@ const projects: Project[] = [
     { title: 'Kent\'s portfolio', description: 'A simple portfolio.' , link: 'https://github.com/xborgkenkent/TikTikToe', image: 'portfolio.png', tech:['Vue.js', 'Typescript', 'Tailwind CSS'], hasSource: false}
     ]
 
+const otherProjects: Project[] = [
+    { title: 'Encrypted Healthcare Records & Billing System (EHRBS) - API', description: 'This is a secure, end-to-end encrypted platform for managing patient records and billing in healthcare facilities. It ensures data confidentiality, integrity, and accessibility by encrypting medical records and financial transactions. ' , link: '', image: 'no-image.png', tech:['C#', 'ASP.Net Core', 'PostgreSQL'], hasSource: false},
+    { title: 'E-Learning Trading Platform', description: 'This is a e-learning trading platform that combines education with gamification to make learning forex trading engaging and interactive. Users can track their progress, monitor how many topics they\'ve covered, and unlock achievements as they advance. Whether you\'re a beginner or an experienced trader, it provides structured, real-world forex knowledge to help you build confidence and improve your trading skills in a fun and motivating way.' , link: 'https://tik-tik-toe-ten.vercel.app/', image: 'NDA.jpg', tech: ['Scala', 'Play Framework', 'Nuxt.js', 'Vue.js', 'Typescript', 'Tailwind CSS', 'PostgreSQL'], hasSource: false},
+    ]
+
 const modalTrigger = ref(false)
 const selectedProject = ref<Project | null>(null)
 
@@ -186,22 +191,31 @@ const resetHighlight = () => {
         <div class="flex flex-col gap-2 pt-20">
             <p class="font-sans font-thin text-md text-[#575757] tracking-wide">Recent Projects</p>
             <div class="columns-1 sm:columns-1 lg:columns-2 gap-4">
-            <div v-for="(project, index) in projects" :key="index" class="mb-4 break-inside-avoid">
-                <RecentProject 
-                    @click="openModal(project)"
-                    :title="project.title" 
-                    :description="project.description" 
-                    :link="project.link" 
-                    :image="project.image" 
-                />
+              <div v-for="(project, index) in projects" :key="index" class="mb-4 break-inside-avoid">
+                  <RecentProject 
+                      @click="openModal(project)"
+                      :title="project.title" 
+                      :description="project.description" 
+                      :link="project.link" 
+                      :image="project.image" 
+                  />
+              </div>
             </div>
         </div>
-
-            <!-- <div class="flex items-center gap-2 pt-6">
-              <p class="font-sans font-bold text-md text-[#FAFAFA] tracking-wide">More projects</p>
-              <img src="../../public/right-arrow.svg" class="size-4">
-            </div> -->
-          </div>
+        <div class="flex flex-col gap-2 pt-20">
+            <p class="font-sans font-thin text-md text-[#575757] tracking-wide">Other Projects</p>
+            <div class="columns-1 sm:columns-1 lg:columns-2 gap-4">
+              <div v-for="(project, index) in otherProjects" :key="index" class="mb-4 break-inside-avoid">
+                  <RecentProject 
+                      @click="openModal(project)"
+                      :title="project.title" 
+                      :description="project.description" 
+                      :link="project.link" 
+                      :image="project.image" 
+                  />
+              </div>
+            </div>
+        </div>
           
         <div class="flex flex-col items-center justify-center pt-24 gap-5">
             <p class="font-sans font-bold text-6xl text-[#FAFAFA] whitespace-nowrap tracking-wider">LET'S TALK</p>
