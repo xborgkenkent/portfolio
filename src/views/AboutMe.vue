@@ -204,7 +204,7 @@ const resetHighlight = () => {
           </div>
           
         <div class="flex flex-col items-center justify-center pt-24 gap-5">
-            <p class="font-sans font-bold text-6xl text-[#FAFAFA] tracking-wider">LET'S TALK</p>
+            <p class="font-sans font-bold text-6xl text-[#FAFAFA] whitespace-nowrap tracking-wider">LET'S TALK</p>
             <div class="flex gap-2">
               <a href="https://www.linkedin.com/in/kent-regiel-buncal/" target="_blank" class="text-2xl hover:animate-wave">
                 <img src="../../public/linkedin.svg" class="size-8">
