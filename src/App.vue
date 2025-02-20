@@ -1,6 +1,23 @@
 <script setup lang="ts">
 import Header from "./components/Header.vue"
 import AboutMe from "./views/AboutMe.vue"
+import { useHead } from '@vueuse/head'
+
+useHead({
+  script: [
+    {
+      innerHTML: `
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "qcr6f8k0n4");
+      `,
+      type: 'text/javascript'
+    }
+  ]
+})
+
 </script>
 
 <template>
