@@ -11,6 +11,8 @@ export interface Tech {
 
 const techs: Tech[] = [
     { name: 'Scala', icon: 'scala.svg' },
+    { name: 'C#', icon: 'c-sharp.png' },
+    { name: 'ASP.NET', icon: 'dotnet.svg' },
     { name: 'Typescript', icon: 'typescript.svg' },
     { name: 'Nuxt', icon: 'nuxt.svg' },
     { name: 'Laravel', icon: 'laravel.svg' },
