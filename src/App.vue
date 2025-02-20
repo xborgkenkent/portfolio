@@ -2,6 +2,8 @@
 import Header from "./components/Header.vue"
 import AboutMe from "./views/AboutMe.vue"
 import { useHead } from '@vueuse/head'
+import Clarity from '@microsoft/clarity';
+
 
 useHead({
   script: [
@@ -17,6 +19,11 @@ useHead({
     }
   ]
 })
+
+const projectId = "qcr6f8k0n4"
+
+Clarity.init(projectId);
+
 
 </script>
 
